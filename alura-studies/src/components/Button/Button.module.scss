@@ -1,0 +1,61 @@
+.botao {
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  color: #fdfdfd;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 16px;
+  width: 150px;
+  border: 2px solid transparent;
+  transition: .3s;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(0% - 10px);
+    background-color: rgba(103, 219, 255, 0.1);
+    width: calc(50% + 10px);
+    transform-origin: left;
+    transform: skewX(-40deg) scaleX(1);
+    height: 100%;
+    z-index: -1;
+    transition: .3s;
+  }
+
+  &:hover {
+    border: 2px solid rgb(72, 232, 253);
+    color: rgb(72, 232, 253);
+    transform: scale(1.02);
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.3);
+
+
+    &::after {
+      
+      transform: skewX(-40deg) scaleX(2);
+    }
+
+  }
+
+  &:active {
+    // background-color: #7CA6B7;
+    box-shadow: 2px 2px 4px #0000009F inset;
+    
+    &::after{
+      background-color: rgba(87, 120, 133, 0.5);
+
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .botao {
+    grid-column-start: span 2;
+    justify-self: center;
+    width: 200px;
+    font-size: 1.7rem;
+  }
+}

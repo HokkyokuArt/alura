@@ -1,0 +1,82 @@
+.novaTarefa {
+  display: flex;
+  flex-direction: column;
+  grid-area: nova-tarefa;
+  // background-color: #7687A1;
+  // border-radius: 10px;
+  // box-shadow: 2px 4px 4px #0000009F;
+  padding: 12px;
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+
+    label {
+      margin-bottom: 8px;
+      font-size: 2rem;
+      font-weight: 400;
+      color: rgb(72, 232, 253);
+    }
+
+    input {
+      width: 100%;
+      min-height: 60px;
+      max-height: 60px;
+      padding: 8px 12px 4px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      // background-color: #5D677C;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: inset 3px 3px 2px rgba(0, 0, 0, 0.4),
+        1px 1px 1px rgba(255, 255, 255, 0.08);
+      margin-bottom: 30px;
+
+      &::placeholder {
+        color: #BFBFBF;
+      }
+
+      &:focus {
+        outline: 2px solid rgb(72, 232, 253);
+      }
+    }
+
+    input[type="time"]::-webkit-datetime-edit-ampm-field {
+      display: none;
+    }
+
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      background-image: url(../../assets/img/check-mark.svg);
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 2.25rem;
+    padding: 24px;
+    box-sizing: border-box;
+
+    .inputContainer {
+      width: calc(60% - 12px);
+
+      &:last-of-type {
+        width: 40%;
+      }
+
+      label {
+        font-size: 2rem;
+      }
+
+      input {
+        height: 100%;
+        font-size: 1.75rem;
+      }
+    }
+  }
+}
