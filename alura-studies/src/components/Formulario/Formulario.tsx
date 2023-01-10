@@ -1,5 +1,6 @@
 import style from'./Formulario.module.scss'
 
+
 import Button from "../Button/Button"
 
 const Formulario = () => {
@@ -27,7 +28,7 @@ const Formulario = () => {
                 required
                 />
             </div>
-            <Button />
+            <Button>Adicionar</Button>
         </form>
     )
 }

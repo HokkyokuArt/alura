@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "host": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -21,4 +22,5 @@
     "typescript-plugin-css-modules": "^4.1.1",
     "vite": "^4.0.0"
   }
+
 }

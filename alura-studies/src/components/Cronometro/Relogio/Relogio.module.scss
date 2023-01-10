@@ -1,0 +1,16 @@
+.relogioNumero {
+    padding-top: 20px;
+    font-size: 5rem;
+
+    @media screen and (min-width:1280px) {
+        font-size: 10rem;
+    }
+}
+
+.relogioDivisao {
+    font-size: 5rem;
+    @media screen and (min-width:1280px) {
+        font-size: 10rem;
+
+    }
+}

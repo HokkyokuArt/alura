@@ -1,0 +1,28 @@
+.cronometro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: cronometro;
+
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .relogioWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: 2px 4px 4px #0000009F;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+        padding: 16px 12px;
+        width: 100%;
+    }
+
+    @media screen and (min-width:1280px) {
+        p {
+            font-size: 2rem;
+        }
+    }
+}
