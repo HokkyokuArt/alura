@@ -169,11 +169,12 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100%;
+	/* height: 100vh; */
 	min-height: 100vh;
 	width: 100%;
 	padding: 16px;
 	box-sizing: border-box;
+
 }
 
 #root {
@@ -185,14 +186,25 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background: unset;
+	background: #13243E;
 }
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 4px;
-	background: #888;
+	background: #45566d;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: #5c6c80;
+
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		padding: 0;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #1F2F48;
+	}
 }

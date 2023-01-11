@@ -1,0 +1,52 @@
+.item {
+    padding: 12px;
+    margin-bottom: 8px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-one);
+    // border: 2px solid transparent;
+    transition: .3s;
+  
+  
+    h3 {
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+
+  
+    @media screen and (min-width:1280px) {
+      font-size: 1.8rem;
+    }
+  }
+  
+  .itemSelecionado {
+    // background-color: #292929;
+    // border: 2px solid var(--font-blue);
+    background-color: rgba(112, 112, 112, 0.25);
+    box-shadow: var(--box-shadow-inset);
+  }
+  
+  .itemCompletado {
+    text-decoration: line-through;
+    color: rgb(145, 145, 145);
+    // background-color: ;
+      background-color: rgba(0, 196, 26, 0.15);
+  
+    cursor: auto;
+  
+    .concluido {
+      display: block;
+      background-image: url(../../../assets/img/check-mark.svg);
+      background-repeat: no-repeat;
+      background-size: 38px 38px;
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 43px;
+      
+    }
+  }

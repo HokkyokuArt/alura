@@ -1,14 +1,20 @@
-import style from'./Button.module.scss'
+import style from './Button.module.scss'
 import React from 'react'
 
+interface Props {
+  children: React.ReactNode,
+  type?: "button" | "submit" | "reset",
+  onClick?: ()=> void
 
-const Button = ({children}: React.PropsWithChildren) => {
+}
+
+const Button = ({ children, type = 'button', onClick }: Props) => {
   return (
-      <button className={style.botao} >
+    <button type={type} className={style.botao} onClick={onClick}>
 
       {children}
 
-      </button>
+    </button>
   )
 }
 

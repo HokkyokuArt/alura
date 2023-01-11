@@ -33,4 +33,12 @@
     padding: 64px;
     width: fit-content;
   }
+
+  @media screen and (max-width: 600px){
+    width: 100%;
+    min-height: 100vh;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: blur(6px);
+  }
 }

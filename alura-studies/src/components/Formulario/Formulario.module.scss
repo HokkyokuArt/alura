@@ -29,13 +29,15 @@
       outline: none;
       background-color: var(--background-one);
       box-shadow: var(--box-shadow-inset);
+      transition: .3s;
 
       &::placeholder {
         color: #BFBFBF;
       }
 
       &:focus {
-        outline: 2px solid rgb(72, 232, 253);
+        background-color: rgba(112, 112, 112, 0.25);
+
       }
     }
 
@@ -44,7 +46,8 @@
     }
 
     input[type="time"]::-webkit-calendar-picker-indicator {
-      background-image: url(../../assets/img/check-mark.svg);
+      // background-image: url(../../assets/img/check-mark.svg);
+      background-image: url(../../assets/img/clock.svg);
     }
   }
 
