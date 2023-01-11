@@ -2,9 +2,6 @@
   display: flex;
   flex-direction: column;
   grid-area: nova-tarefa;
-  // background-color: #7687A1;
-  // border-radius: 10px;
-  // box-shadow: 2px 4px 4px #0000009F;
   padding: 12px;
 
   .inputContainer {
@@ -12,13 +9,13 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 40px;
 
     label {
       margin-bottom: 8px;
-      font-size: 2rem;
+      font-size: var(--title-font-size);
       font-weight: 400;
-      color: rgb(72, 232, 253);
+      color: var(--font-blue);
     }
 
     input {
@@ -30,11 +27,8 @@
       border: none;
       border-radius: 5px;
       outline: none;
-      // background-color: #5D677C;
-      background-color: rgba(255, 255, 255, 0.15);
-      box-shadow: inset 3px 3px 2px rgba(0, 0, 0, 0.4),
-        1px 1px 1px rgba(255, 255, 255, 0.08);
-      margin-bottom: 30px;
+      background-color: var(--background-one);
+      box-shadow: var(--box-shadow-inset);
 
       &::placeholder {
         color: #BFBFBF;
@@ -70,7 +64,7 @@
       }
 
       label {
-        font-size: 2rem;
+        font-size: var(--title-font-size);
       }
 
       input {
