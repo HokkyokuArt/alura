@@ -11,18 +11,45 @@
   justify-content: space-between;
   padding: 0 15px;
   width: 400px;
+
   @media (max-width: $mobile) {
     width: 100%;
   }
+
   input {
-    background-color: $grey;
+    background-color: inherit;
     border: none;
     font-size: 1.5rem;
     font-weight: bold;
     outline: none;
     width: 100%;
+
     &::placeholder {
-      color: #4c4d5e;
+      color: $black;
     }
   }
+
+  & * {
+    color: $black;
+  }
+
+  &--darkMode {
+    background-color: $black;
+    // background-color: red;
+
+
+    input {
+      color: $grey;
+
+      &::placeholder {
+        color: $dark-grey;
+      }
+    }
+
+    & * {
+      color: $grey;
+    }
+  }
+
+
 }

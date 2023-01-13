@@ -1,0 +1,37 @@
+@import "src/styles/variaveis";
+
+.btn {
+    background-color: $grey;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 20px;
+    transition: background .3s;
+
+    &>* {
+        color: $dark-grey;
+    }
+
+    &:hover {
+        background-color: $black;
+        cursor: pointer;
+    }
+
+    &:hover>* {
+        color: $red;
+    }
+
+    &--darkMode {
+        background-color: $black;
+
+        &>* {
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: #fff;
+            cursor: pointer;
+        }
+    }
+}

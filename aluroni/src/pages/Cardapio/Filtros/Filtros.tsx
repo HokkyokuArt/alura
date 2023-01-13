@@ -7,9 +7,10 @@ type IOpcao = typeof filtros[0];
 interface Props {
     filtro: number | null;
     setFiltro: React.Dispatch<React.SetStateAction<number | null>>
+    darkMode: boolean,
 }
 
-const Filtros = ({ filtro, setFiltro }: Props) => {
+const Filtros = ({ filtro, setFiltro , darkMode}: Props) => {
     const selecionarFiltro = (opt: IOpcao) => {
         if (opt.id == filtro) return setFiltro(null)
         return setFiltro(opt.id);
@@ -24,7 +25,9 @@ const Filtros = ({ filtro, setFiltro }: Props) => {
                     className={classNames(
                         {
                             [styles.filtros__filtro]: true,
-                            [styles['filtros__filtro--ativo']]: filtro === opt.id
+                            [styles['filtros__filtro--ativo']]: filtro === opt.id,
+                            [styles['filtros__filtro--darkMode']]: darkMode,
+                            [styles['filtros__filtro--darkMode--ativo']]: darkMode && filtro === opt.id,
                         }
                     )}
                     onClick={() => selecionarFiltro(opt)}

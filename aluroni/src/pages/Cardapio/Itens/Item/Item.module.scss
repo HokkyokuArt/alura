@@ -6,10 +6,15 @@ $carnes: #30201e;
 $combos: #e6c864;
 $veganos: #80aa40;
 
+$massas-darkMode: #751f1f;
+$carnes-darkMode: #382725;
+$combos-darkMode: #8b7e00;
+$veganos-darkMode: #255c14;
+
 .item {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 100%;
   &__imagem {
     min-width: 240px;
     @media (max-width: $desktop_xsm) {
@@ -18,6 +23,8 @@ $veganos: #80aa40;
     img {
       border-radius: 8px;
       width: 100%;
+      object-fit: cover;
+      min-height: 100%;
     }
   }
   &__descricao {
@@ -99,4 +106,39 @@ $veganos: #80aa40;
     color: $red;
     font-size: 1.7rem;
   }
+
+  &--darkMode {
+    &__titulo {
+      h2 {
+        color: #fff;
+      }
+    }
+  
+    &__tipo {
+      &__massas {
+        background-color: $massas-darkMode;
+        color: white;
+      }
+      &__carnes {
+        background-color: $carnes-darkMode;
+        color: white;
+      }
+      &__combos {
+        background-color: $combos-darkMode;
+        color: white;
+  
+      }
+      &__veganos {
+        background-color: $veganos-darkMode;
+        color: white;
+      }
+    }
+    &__porcao,
+    &__qtdpessoas{
+    color: #fff;
+    }
+  }
 }
+
+
+

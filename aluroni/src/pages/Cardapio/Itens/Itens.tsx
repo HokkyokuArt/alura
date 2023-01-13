@@ -7,9 +7,10 @@ interface Props {
     busca: string,
     filtro: number | null,
     ordenador: string,
+    darkMode: boolean
 }
 
-export default function Itens({ busca, filtro, ordenador }: Props) {
+export default function Itens({ busca, filtro, ordenador, darkMode }: Props) {
     const [lista, setLista] = useState(cardapio)
 
     const testaBusca = (title: string) => {
@@ -40,18 +41,18 @@ export default function Itens({ busca, filtro, ordenador }: Props) {
         const listaFiltrada =
             cardapio
                 .filter(item => testaBusca(item.title) && testaFiltro(item.category.id));
-
         const listaOrdenada = ordenar(listaFiltrada);
         setLista(listaOrdenada)
-
     }, [busca, filtro, ordenador])
 
 
     return (
         <div className={styles.itens}>
-            {lista.map(item => (
-                <Item key={item.id} {...item} />
-            ))}
-        </div>
+            {lista.length > 0 ? lista.map(item => (
+                <Item key={item.id} {...item} darkMode={darkMode} />
+            )) : <div className={styles.naoEncontrado}>
+                <p>Desculpa... prato não encontrado</p>
+            </div>}
+        </div >
     )
 }

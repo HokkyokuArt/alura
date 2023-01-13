@@ -1,7 +1,23 @@
+@import "src/styles/variaveis";
+
 .itens {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+
+  & .naoEncontrado {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    height: 100px;
+
+    &>p {
+      color: $dark-grey;
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
   }
+}

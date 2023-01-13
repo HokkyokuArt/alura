@@ -4,11 +4,25 @@
 
 /* ❂ ⊱• ◤◢◣◥◤◢◣◥◤◢◣◥◤◢◣◥ •⊰ ｢  GLOBAL  ｣ ⊱• ◤◢◣◥◤◢◣◥◤◢◣◥◤◢◣◥ •⊰ ❂ */
 
-body{
-    background-color: #f6f6f6;
+html,
+body,
+main {
+    min-height: 100vh;
 }
 
 * {
     box-sizing: border-box;
     font-family: "Italiana", serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #92929d;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #d73b3b;
+    border-radius: 10px;
 }

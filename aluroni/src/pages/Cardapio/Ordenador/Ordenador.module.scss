@@ -1,4 +1,5 @@
 @import "src/styles/variaveis";
+@import "src/styles/breakpoints";
 
 .ordenador {
   align-items: center;
@@ -14,10 +15,16 @@
   min-width: 240px;
   padding: 0 40px;
   position: relative;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+
   &--ativo {
     background-color: $blue;
     color: white;
   }
+
   &__options {
     display: none;
     position: absolute;
@@ -25,10 +32,12 @@
     flex-direction: column;
     top: 100%;
     width: 100%;
+
     &--ativo {
       display: flex;
     }
   }
+
   &__option {
     align-items: center;
     background-color: $grey;
@@ -39,11 +48,35 @@
     height: 40px;
     justify-content: center;
     width: inherit;
+
+
     &:hover,
     &--ativo {
       background-color: $blue;
       cursor: pointer;
       color: white;
+    }
+  }
+
+
+  &--darkMode {
+    background-color: $black;
+    color: $grey;
+
+    &--ativo {
+      background-color: $blue-darkMode;
+    }
+
+    &__option {
+      background-color: $black;
+
+      border-top: 2px solid $light-grey;
+      color: $grey;
+
+      &:hover,
+      &--ativo {
+        background-color: $blue-darkMode;
+      }
     }
   }
 }

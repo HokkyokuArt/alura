@@ -1,8 +1,28 @@
 @import "src/styles/variaveis";
 @import "src/styles/breakpoints";
 
+.Main{
+    background-color: $back-ground;
+    &--darkMode{
+        background-color: $back-ground-darkMode;
+    }
+}
+
 .menu {
+    position: sticky;
+    top: 0;
     padding: 20px $padding-horizontal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $header;
+
+    z-index: 10;
+
+    
+    &--darkMode{
+        background-color: $header-darkMode;
+    }
 
     @media (max-width: $desktop_xsm) {
         padding: 20px $padding-horizontal-mobile;
@@ -15,6 +35,7 @@
     @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
         padding: 20px $padding-horizontal-md;
     }
+
 }
 
 .header {
@@ -47,24 +68,28 @@
 }
 
 .cardapio {
-    padding: 50px $padding-horizontal;
+    padding: 0px $padding-horizontal;
 
     @media (max-width: $desktop_xsm) {
-        padding: 50px $padding-horizontal-mobile;
+        padding: 0px  $padding-horizontal-mobile;
     }
 
     @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-        padding: 50px $padding-horizontal-sm;
+        padding: 0px  $padding-horizontal-sm;
     }
 
     @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-        padding: 50px $padding-horizontal-md;
+        padding: 0px  $padding-horizontal-md;
     }
 
     &__titulo {
         color: $dark;
         font-size: 3rem;
         margin-bottom: 30px;
+
+        &--darkMode {
+            color: $light-grey;
+        }
     }
 
     &__filtros {
