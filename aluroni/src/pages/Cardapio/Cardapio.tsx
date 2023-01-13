@@ -3,14 +3,14 @@ import { ReactComponent as Logo } from 'assets/logo.svg'
 import Buscador from './Buscador/Buscador'
 import { useState } from 'react'
 import Filtros from './Filtros/Filtros'
-import Ordenador from './Ordenador/Ordenador'
+import Ordenador, { OpcoesOrdenador } from './Ordenador/Ordenador'
 import Itens from './Itens/Itens'
 
 const Cardapio = () => {
 
     const [busca, setBusca] = useState<string>('');
     const [filtro, setFiltro] = useState<number | null>(null);
-    const [ordenador, setOrdenador] = useState<string>('')
+    const [ordenador, setOrdenador] = useState<OpcoesOrdenador>('')
 
     return (
         <main>
@@ -30,7 +30,7 @@ const Cardapio = () => {
                     <Filtros filtro={filtro} setFiltro={setFiltro}/>
                     <Ordenador ordenador={ordenador} setOrdenador={setOrdenador}/>
                 </div>
-                <Itens/>
+                <Itens busca={busca} filtro={filtro} ordenador={ordenador}/>
             </section>
 
         </main>
