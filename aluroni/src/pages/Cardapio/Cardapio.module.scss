@@ -1,9 +1,10 @@
 @import "src/styles/variaveis";
 @import "src/styles/breakpoints";
 
-.Main{
+.Main {
     background-color: $back-ground;
-    &--darkMode{
+
+    &--darkMode {
         background-color: $back-ground-darkMode;
     }
 }
@@ -16,11 +17,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: $header;
-
     z-index: 10;
 
-    
-    &--darkMode{
+    &--darkMode {
         background-color: $header-darkMode;
     }
 
@@ -35,7 +34,6 @@
     @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
         padding: 20px $padding-horizontal-md;
     }
-
 }
 
 .header {
@@ -69,17 +67,21 @@
 
 .cardapio {
     padding: 0px $padding-horizontal;
+    padding-bottom: 50px;
 
     @media (max-width: $desktop_xsm) {
-        padding: 0px  $padding-horizontal-mobile;
+        padding: 0px $padding-horizontal-mobile;
+        padding-bottom: 50px;
     }
 
     @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-        padding: 0px  $padding-horizontal-sm;
+        padding: 0px $padding-horizontal-sm;
+        padding-bottom: 50px;
     }
 
     @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-        padding: 0px  $padding-horizontal-md;
+        padding: 0px $padding-horizontal-md;
+        padding-bottom: 50px;
     }
 
     &__titulo {
