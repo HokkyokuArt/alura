@@ -23,8 +23,12 @@
         background-color: $header-darkMode;
     }
 
-    @media (max-width: $desktop_xsm) {
+    @media (max-width: $mobile) {
         padding: 20px $padding-horizontal-mobile;
+    }
+
+    @media (min-width: $mobile) and (max-width: $desktop_xsm) {
+        padding: 20px $padding-horizontal-xsm;
     }
 
     @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
@@ -45,9 +49,18 @@
     height: 300px;
     padding: 0px $padding-horizontal;
 
-    @media (max-width: $desktop_xsm) {
+    @media (max-width: $mobile) {
         padding: 0px $padding-horizontal-mobile;
     }
+
+    @media (min-width: $mobile) and (max-width: $desktop_xsm) {
+        padding: 0px $padding-horizontal-xsm;
+    }
+
+    @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+        padding: 0px $padding-horizontal-sm;
+    }
+
 
     @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
         padding: 0px $padding-horizontal-sm;
@@ -69,18 +82,26 @@
     padding: 0px $padding-horizontal;
     padding-bottom: 50px;
 
-    @media (max-width: $desktop_xsm) {
-        padding: 0px $padding-horizontal-mobile;
+    @media (min-width: $mobile) and (max-width: $desktop_xsm) {
+        padding: 0px $padding-horizontal-xsm;
         padding-bottom: 50px;
     }
 
     @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
         padding: 0px $padding-horizontal-sm;
         padding-bottom: 50px;
+
     }
 
     @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
         padding: 0px $padding-horizontal-md;
+        // padding: 0px 550px;
+
+        padding-bottom: 50px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 0px $padding-horizontal-mobile;
         padding-bottom: 50px;
     }
 
@@ -94,7 +115,8 @@
         }
     }
 
-    &__filtros {
+    &__filtros { 
+        // background-color: red;
         align-items: center;
         display: flex;
         flex-wrap: wrap;
