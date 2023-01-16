@@ -1,25 +1,17 @@
-import styles from './Item.module.scss'
-import cardapio from '../itens.json'
-import classNames from 'classnames'
+import styles from './Item.module.scss';
+import { TPrato } from 'types/TPrato';
+import TagsPrato from 'components/TagsPrato/TagsPrato';
+import { useNavigate } from 'react-router-dom';
 
-type ICardapio = typeof cardapio[0]
-interface Props extends ICardapio{
+interface Props extends TPrato {
     darkMode: boolean;
 }
-const Item = ({
-    title,
-    description,
-    photo,
-    size,
-    serving,
-    price,
-    category, 
-    darkMode
-}:Props) => {
-
+const Item = (props: Props) => {
+    const { id, title, description, photo, darkMode } = props;
+    const navigate = useNavigate();
 
     return (
-        <div className={styles.item}>
+        <div className={styles.item} onClick={()=>navigate(`/prato/${id}`)}>
             <div className={styles.item__imagem}>
                 <img src={photo} alt={title} />
             </div>
@@ -28,26 +20,10 @@ const Item = ({
                     <h2>{title}</h2>
                     <p>{description}</p>
                 </div>
-                <div className={styles.item__tags}>
-                    <div className={
-                        classNames(
-                            {
-                                [styles.item__tipo]: true,
-                                [styles[`item__tipo__${category.label.toLowerCase()}`]]: !darkMode,
-                                [styles['item--darkMode__tipo']]: darkMode,
-                                [styles[`item--darkMode__tipo__${category.label.toLowerCase()}`]]: darkMode,
-
-                            }
-                        )
-                    }
-                    >{category.label}</div>
-                    <div className={`${styles.item__porcao} ${darkMode && styles['item--darkMode__porcao']}`}>{size}g</div>
-                    <div className={`${styles.item__qtdpessoas} ${darkMode && styles['item--darkMode__qtdpessoas']}`}>Serve {serving} pessoa{serving !== 1 && 's'}</div>
-                    <div className={styles.item__valor}>R$ {price.toFixed(2).replace('.', ',')}</div>
-                </div>
+                <TagsPrato {...props} />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Item
+export default Item;

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Item from './Item/Item'
 import cardapio from 'data/cardapio.json'
 import styles from './Itens.module.scss'
+import { TPrato } from 'types/TPrato';
 
 interface Props {
     busca: string,
@@ -23,7 +24,7 @@ export default function Itens({ busca, filtro, ordenador, darkMode }: Props) {
         return true;
     }
 
-    const ordenar = (lista: typeof cardapio): typeof cardapio => {
+    const ordenar = (lista: TPrato[]): TPrato[] => {
         switch (ordenador) {
             case 'porcao':
                 return lista.sort((a, b) => a.size > b.size ? 1 : -1);

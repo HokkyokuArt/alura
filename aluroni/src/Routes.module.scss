@@ -1,0 +1,10 @@
+@import "src/styles/variaveis";
+@import "src/styles/breakpoints";
+
+.Main {
+    background-color: $back-ground;
+
+    &--darkMode {
+        background-color: $back-ground-darkMode;
+    }
+}
